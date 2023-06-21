@@ -1,5 +1,5 @@
 /** Calculates how many hands you'll lose in a row before going broke based on your bankroll and minimum bet using
- * the Martingale betting system */
+ * the Martingale betting system. Also tells you how much you'll have leftover at the end. */
 const handsTillBroke = (bankRoll, minBet) => {
   if (!bankRoll || !minBet || typeof bankRoll !== 'number' || typeof minBet !== 'number') {
     console.error('Improper inputs');
@@ -13,8 +13,9 @@ const handsTillBroke = (bankRoll, minBet) => {
     currBet *= 2;
     numHands++;
   }
-  return numHands;
+  return `Hands till broke: ${numHands}\nAmount leftover: ${currBankRoll}`;
 }
 
-console.assert(handsTillBroke(10, 1) === 3);
-console.log(handsTillBroke(1000, 1));
+// ----------------------------- Tests and output ----------------------------------- //
+console.assert(handsTillBroke(10, 1) === 'Hands till broke: 3\nAmount leftover: 3');
+console.log(handsTillBroke(10000, 1));
