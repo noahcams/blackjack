@@ -14,7 +14,10 @@ const handsTillBroke = (bankRoll, minBet) => {
     numHands++;
   }
   return `Hands till broke: ${numHands}\nAmount leftover: ${currBankRoll}`;
-}
+};
+
+/** calculates the bankroll needed to lose the given number of hands in a row starting with the minimum bet */
+const bankrollSizeNeeded = (numHands, minBet) => {};
 
 // ----------------------------- Tests and output ----------------------------------- //
 console.assert(handsTillBroke(10, 1) === 'Hands till broke: 3\nAmount leftover: 3');
